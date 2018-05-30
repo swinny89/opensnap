@@ -1,6 +1,6 @@
 all:
 	mkdir -p bin
-	$(CC) -std=c99 -Wall -o bin/opensnap src/opensnap.c -lX11 `pkg-config gtk+-3.0 --cflags` `pkg-config gtk+-3.0 --libs`
+	$(CC) -std=c99 -Wall -L /usr/X11R6/lib -o bin/opensnap src/opensnap.c -lX11 `pkg-config gtk+-3.0 --cflags` `pkg-config gtk+-3.0 --libs`
 install:
 	install bin/opensnap /usr/bin/
 	install -dm0755 /etc/opensnap
